@@ -1,0 +1,36 @@
+# ==============================================================================
+# Honeypot Telemetry & Captured Payloads (Strict Isolation)
+# Raw attacker IP addresses, payload binaries, and logs must never be committed.
+# ==============================================================================
+data/*
+!data/.gitkeep
+!data/README.md
+
+# Logs & Databases
+*.log
+*.sqlite3
+*.db
+
+# Kibana Saved Dashboards (allow tracked export)
+!dashboards/*.ndjson
+
+# Environment & Secrets
+.env
+*.env.local
+*.pem
+*.key
+
+# Python Environment
+venv/
+env/
+.venv/
+cowrie-env/
+cowrie-venv/
+__pycache__/
+*.pyc
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
