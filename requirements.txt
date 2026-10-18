@@ -1,1 +1,13 @@
+# Core Data Parsing
+pandas>=2.0.0
 
+# Threat Intelligence & Enrichment
+requests>=2.31.0
+geoip2>=4.7.0
+
+# Visualization / Dashboarding
+streamlit>=1.28.0
+plotly>=5.17.0
+
+# Configuration parsing
+pyyaml>=6.0
