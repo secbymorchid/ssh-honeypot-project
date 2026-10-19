@@ -1,0 +1,31 @@
+services:
+  cowrie:
+    image: cowrie/cowrie:latest
+    container_name: cowrie-honeypot
+    restart: unless-stopped
+    ports:
+      # Exposes Cowrie SSH on host port 2222 (redirect port 22 -> 2222 via iptables)
+      - "2222:2222"
+    volumes:
+      # Mount custom configuration and credentials
+      - ./config/cowrie.cfg:/cowrie/cowrie-git/etc/cowrie.cfg:ro
+      - ./config/userdb.txt:/cowrie/cowrie-git/etc/userdb.txt:ro
+      # Persist captured attack telemetry and downloaded payloads locally
+      - ./data/logs:/cowrie/cowrie-git/var/log/cowrie
+      - ./data/downloads:/cowrie/cowrie-git/var/lib/cowrie/downloads
+      - ./data/tty:/cowrie/cowrie-git/var/lib/cowrie/tty
+    environment:
+      - COWRIE_STDOUT=1
+    networks:
+      - honeypot_net
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1024M
+
+networks:
+  honeypot_net:
+    driver: bridge

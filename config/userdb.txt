@@ -1,0 +1,26 @@
+# ==============================================================================
+# Cowrie Simulated Authentication Database (userdb.txt)
+# Format: <username>:<uid>:<password>
+# Status:
+#   - Specific passwords allow simulated compromise to capture executed commands.
+#   - Wildcard '*' rejects login or accepts depending on Cowrie auth strategy.
+# ==============================================================================
+
+# Common Administrative Honey Credentials (allows interactive shell access)
+root:x:root
+root:x:123456
+root:x:password
+root:x:admin
+root:x:toor
+
+# Service & Default User Accounts
+ubuntu:x:ubuntu
+admin:x:admin123
+support:x:support2024
+test:x:test
+user:x:user
+ansible:x:ansible
+postgres:x:postgres
+
+# Deny all other combinations by default (forces realistic brute-force attempt counts)
+*:x:*
