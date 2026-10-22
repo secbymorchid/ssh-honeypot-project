@@ -1,55 +1,118 @@
-# Phase 1: Environment Setup Guide
+# Phase 1 & 2: Environment Deployment & Hardening Guide
 
 ## 1. Overview
-This guide details the steps required to provision an isolated Linux Virtual Machine (VM) and install Docker to host the Cowrie SSH Honeypot. 
+This guide provides an end-to-end operational walkthrough to provision an isolated Linux Virtual Machine (VM), install Docker, deploy Cowrie using Docker Compose, and establish monitoring pipelines.
 
-We are using a **defense-in-depth architecture**: 
-1. **The VM (VirtualBox + Ubuntu):** Isolates the honeypot from the Windows host OS.
-2. **The Container (Docker):** Isolates the honeypot application from the Ubuntu OS.
+---
 
-This ensures that if the honeypot is compromised, the attacker is trapped inside a container, which is trapped inside a virtual machine.
+## 2. Infrastructure Prerequisites
+- **Host OS:** Windows 10/11 or macOS with VirtualBox 7.x installed.
+- **Virtual Machine:** Ubuntu Server 22.04 LTS (Minimal installation).
+- **Compute Specs:** 2 vCPUs, 2048 MB RAM, 20 GB dynamically allocated disk.
+- **Network Configuration:**
+  - **Adapter 1 (NAT):** Outbound internet access to pull containers and packages.
+  - **Adapter 2 (Host-Only):** Secure, isolated host-to-guest administrative SSH access (e.g., `192.168.56.x`).
 
-## 2. Prerequisites
-Before beginning, ensure you have the following:
-- **Hardware:** A host machine (Windows) with at least 8GB RAM and 20GB free disk space.
-- **Virtualization Enabled:** Ensure VT-x/AMD-V is enabled in your BIOS/UEFI settings.
-- **Software:** 
-  - [Oracle VirtualBox](https://www.virtualbox.org/) (Latest version)
-  - [Ubuntu Server 22.04 LTS ISO](https://ubuntu.com/download/server) (Do not use the Desktop version).
-- **Terminal:** Git Bash or Windows Terminal (for SSH access).
+---
 
-## 3. VM Configuration Specifications
-Configure the VM with the following specs to ensure smooth operation without draining host resources:
-- **Name:** `Honeypot-VM`
-- **Memory (RAM):** 2048 MB (2GB)
-- **Processors:** 1 CPU
-- **Storage:** 20 GB (VDI, Dynamically allocated)
-- **Network Adapter 1:** NAT (Allows internet access for Docker pulls).
-- **Network Adapter 2:** Host-Only Adapter (Allows your Windows host to SSH into the VM securely).
+## 3. Host System & VM Provisioning
 
-## 4. OS Installation Steps (High-Level)
-1. Boot the VM with the Ubuntu Server ISO.
-2. Follow the installation wizard.
-3. **User Setup:** Create a user named `honeypot` (Do not use `admin` or `root`).
-4. **SSH Setup:** Check the box to "Install OpenSSH server".
-5. Reboot and log into your new Ubuntu VM via your terminal (`ssh honeypot@<VM_IP>`).
+### Step 3.1: VM Operating System Installation
+1. Boot Ubuntu Server ISO and select standard minimal installation.
+2. Configure default administrator account:
+   - User: `honeypot`
+   - Hostname: `honeypot-sensor-01`
+3. Enable `Install OpenSSH server`.
+4. After initial boot, verify network interfaces:
+   ```bash
+   ip a
+   ```
 
-## 5. Docker Installation (Inside the Ubuntu VM)
-Once logged into the Ubuntu VM, run the following commands to install Docker:
-
+### Step 3.2: Automated Provisioning via Setup Script
+Clone this repository inside the Ubuntu VM and execute the provisioning script:
 ```bash
-# Update package lists
-sudo apt update && sudo apt upgrade -y
+git clone https://github.com/secbymorchid/ssh-honeypot-project.git
+cd ssh-honeypot-project
+chmod +x scripts/*.sh
+sudo ./scripts/setup_environment.sh
+```
 
-# Install prerequisite packages
-sudo apt install -y curl git ufw
+The script will automatically:
+- Install system security tools (`ufw`, `iptables-persistent`, `jq`, `python3-venv`).
+- Install Docker Engine & Docker Compose plugin.
+- Configure local directories (`data/logs`, `data/downloads`, `data/tty`) with proper permissions (UID 1000).
+- Initialize the Python virtual environment with required dependencies.
 
-# Install Docker using the official convenience script
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+---
 
-# Add your user to the docker group (so you don't need 'sudo' for docker commands)
-sudo usermod -aG docker $USER
+## 4. SSH Port Redirection & Hardening
 
-# Apply group changes (log out and back in, or run this)
-newgrp docker
+To capture external attackers scanning standard port 22 while preserving administrative access to your real Ubuntu host:
+
+### Step 4.1: Relocate Host SSH Daemon
+1. Edit the OpenSSH daemon configuration:
+   ```bash
+   sudo nano /etc/ssh/sshd_config
+   ```
+2. Change the default port:
+   ```text
+   Port 22222
+   ```
+3. Restart OpenSSH:
+   ```bash
+   sudo systemctl restart ssh
+   ```
+4. Verify you can connect on port 22222:
+   ```bash
+   ssh -p 22222 honeypot@<VM_IP>
+   ```
+
+### Step 4.2: Redirect Port 22 to Cowrie (Port 2222)
+Route inbound connections destined for standard SSH port 22 to the Cowrie honeypot container listening on port 2222:
+```bash
+sudo iptables -t nat -A PREROUTING -p tcp --dport 22 -j REDIRECT --to-port 2222
+sudo netfilter-persistent save
+```
+
+---
+
+## 5. Honeypot Stack Deployment
+
+Launch the Cowrie container using Docker Compose:
+```bash
+docker compose up -d
+```
+
+### Verification & Health Checks
+1. Inspect running status:
+   ```bash
+   docker compose ps
+   ```
+2. Monitor real-time Cowrie logs:
+   ```bash
+   docker compose logs -f cowrie
+   ```
+3. Test local honeypot connectivity:
+   ```bash
+   ssh -p 2222 root@localhost
+   ```
+   *(Password: `root` or `123456` as defined in `config/userdb.txt`)*
+
+---
+
+## 6. Telemetry Processing & Report Generation
+
+Once traffic has been captured in `data/logs/cowrie.json`:
+
+1. Run the Python analysis engine:
+   ```bash
+   ./scripts/parse_logs.py --input data/logs/cowrie.json --output data/threat_intelligence_report.json
+   ```
+
+2. For testing without exposing the honeypot to the public internet:
+   ```bash
+   ./scripts/parse_logs.py --generate-sample
+   ```
+
+3. Import `dashboards/kibana_dashboard_export.ndjson` into Kibana under:
+   **Management > Stack Management > Saved Objects > Import**.
