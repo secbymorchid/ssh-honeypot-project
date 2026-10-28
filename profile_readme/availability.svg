@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 48" width="830" height="48">
+  <!-- Panel Base: Slim rounded #17130F with Hairline Border #3A3126 -->
+  <rect x="0.5" y="0.5" width="829" height="47" rx="6" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+
+  <!-- Sage Dot -->
+  <circle cx="28" cy="24" r="4.5" fill="#7FA88E"/>
+
+  <!-- Availability Statement -->
+  <text x="44" y="29" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500" fill="#EFE8D8">Open to internships in cyber GRC, risk assessment and IT/cyber project management</text>
+
+  <!-- Right Email Prompt -->
+  <text x="798" y="29" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="13" font-weight="600" fill="#C8A45A" text-anchor="end">get in touch ↗</text>
+</svg>

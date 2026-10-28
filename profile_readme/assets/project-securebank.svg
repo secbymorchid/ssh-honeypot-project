@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 138" width="830" height="138">
+  <rect x="0.5" y="0.5" width="829" height="137" rx="8" fill="#211B15" stroke="#3A3126" stroke-width="1"/>
+  <line x1="32" y1="1" x2="84" y2="1" stroke="#C8A45A" stroke-width="2"/>
+
+  <!-- File-style index: 01 /securebank-lab -->
+  <text x="32" y="32" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#8FBF9F">01 /<tspan font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" fill="#EFE8D8">securebank-lab</tspan></text>
+  <text x="798" y="32" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="13" font-weight="500" fill="#BDB29C" text-anchor="end">view repository ↗</text>
+
+  <text x="32" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" fill="#BDB29C">Secure banking information system built end to end, from data modelling to PostgreSQL row-level</text>
+  <text x="32" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" fill="#BDB29C">security, Linux hardening, a Python SIEM and ISO 27001 control mapping.</text>
+
+  <g transform="translate(32, 102)">
+    <rect x="0" y="0" width="100" height="22" rx="3" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+    <text x="50" y="15" font-family="ui-monospace, monospace" font-size="11.5" fill="#EFE8D8" text-anchor="middle">ISO 27001</text>
+
+    <rect x="110" y="0" width="134" height="22" rx="3" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+    <text x="177" y="15" font-family="ui-monospace, monospace" font-size="11.5" fill="#EFE8D8" text-anchor="middle">PostgreSQL RLS</text>
+
+    <rect x="254" y="0" width="114" height="22" rx="3" fill="#17130F" stroke="#C8A45A" stroke-width="0.9"/>
+    <text x="311" y="15" font-family="ui-monospace, monospace" font-size="11.5" font-weight="600" fill="#C8A45A" text-anchor="middle">Python SIEM</text>
+  </g>
+</svg>

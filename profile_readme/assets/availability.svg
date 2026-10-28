@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 42" width="830" height="42">
+  <rect x="0.5" y="0.5" width="829" height="41" rx="6" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+
+  <!-- Green Dot in #8FBF9F -->
+  <circle cx="28" cy="21" r="4.5" fill="#8FBF9F"/>
+
+  <!-- Availability Statement -->
+  <text x="44" y="26" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="12.5" font-weight="700" fill="#8FBF9F">STATUS: <tspan fill="#EFE8D8" font-family="system-ui, -apple-system, sans-serif" font-size="13.5" font-weight="500">OPEN TO INTERNSHIPS · CYBER GRC · RISK ASSESSMENT · IT/CYBER PROJECT MANAGEMENT</tspan></text>
+
+  <!-- READY_ Aligned Right in Phosphor Green #8FBF9F -->
+  <text x="798" y="26" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="13" font-weight="700" fill="#8FBF9F" text-anchor="end">READY_</text>
+</svg>

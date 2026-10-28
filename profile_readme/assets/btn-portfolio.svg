@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 42" width="190" height="42">
+  <!-- Button Base: #17130F with Brass Hairline Border #C8A45A for Primary CTA -->
+  <rect x="0.5" y="0.5" width="189" height="41" rx="6" fill="#17130F" stroke="#C8A45A" stroke-width="1.1"/>
+  <rect x="3.5" y="3.5" width="183" height="35" rx="4" fill="none" stroke="#251E17" stroke-width="0.8"/>
+  
+  <!-- Left Brass Accent Notch -->
+  <rect x="0.5" y="10" width="3" height="22" rx="1.5" fill="#C8A45A"/>
+
+  <!-- Centered Label -->
+  <text x="96" y="26" font-family="Georgia, 'Times New Roman', serif" font-size="14.5" font-weight="700" fill="#EFE8D8" text-anchor="middle" letter-spacing="0.5px">Portfolio <tspan fill="#C8A45A" font-family="system-ui, sans-serif" font-weight="600">↗</tspan></text>
+</svg>

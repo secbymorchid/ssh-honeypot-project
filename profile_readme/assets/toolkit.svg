@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 172" width="830" height="172">
+  <rect x="0.5" y="0.5" width="829" height="171" rx="8" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+  <rect x="4.5" y="4.5" width="821" height="163" rx="5" fill="none" stroke="#251E17" stroke-width="0.8"/>
+
+  <!-- Section Label Prompt -->
+  <text x="32" y="32" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="13.5" font-weight="600" fill="#8FBF9F" letter-spacing="1.2px">&gt; toolkit</text>
+  <line x1="32" y1="44" x2="798" y2="44" stroke="#3A3126" stroke-width="1"/>
+
+  <!-- Line 1: Governance & architecture -->
+  <g transform="translate(32, 74)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" font-weight="700" fill="#C8A45A">Governance &amp; architecture</text>
+    <!-- Mainframe dotted leader line -->
+    <line x1="172" y1="-4" x2="186" y2="-4" stroke="#8FBF9F" stroke-width="1" stroke-dasharray="2, 3" opacity="0.5"/>
+    <text x="192" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" fill="#EFE8D8">ISO 27001 · EBIOS RM · GDPR · Merise · UML · SAP PowerDesigner · Agile/Scrum · GanttProject</text>
+  </g>
+
+  <!-- Line 2: Security operations -->
+  <g transform="translate(32, 110)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" font-weight="700" fill="#C8A45A">Security operations</text>
+    <line x1="130" y1="-4" x2="186" y2="-4" stroke="#8FBF9F" stroke-width="1" stroke-dasharray="2, 3" opacity="0.5"/>
+    <text x="192" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" fill="#EFE8D8">MITRE ATT&amp;CK · SIEM · Linux hardening · iptables · Wireshark · Threat hunting</text>
+  </g>
+
+  <!-- Line 3: Scripting & systems -->
+  <g transform="translate(32, 146)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" font-weight="700" fill="#C8A45A">Scripting &amp; systems</text>
+    <line x1="134" y1="-4" x2="186" y2="-4" stroke="#8FBF9F" stroke-width="1" stroke-dasharray="2, 3" opacity="0.5"/>
+    <text x="192" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" fill="#EFE8D8">Python · Bash · SQL/SQLite · C · Docker · Git</text>
+  </g>
+</svg>

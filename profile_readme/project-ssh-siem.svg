@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 148" width="830" height="148">
+  <!-- Card Base: #211B15 with Hairline Border #3A3126 -->
+  <rect x="0.5" y="0.5" width="829" height="147" rx="8" fill="#211B15" stroke="#3A3126" stroke-width="1"/>
+
+  <!-- Subtle Top Brass Accent Notch -->
+  <line x1="32" y1="1" x2="84" y2="1" stroke="#C8A45A" stroke-width="2"/>
+
+  <!-- Header: Index + Title + Link indicator -->
+  <text x="32" y="34" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#C8A45A">02.</text>
+  <text x="62" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" fill="#EFE8D8">SSH Brute-Force Detection Pipeline</text>
+  <text x="798" y="34" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="13" font-weight="500" fill="#BDB29C" text-anchor="end">view repository ↗</text>
+
+  <!-- One-sentence outcome -->
+  <text x="32" y="64" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#BDB29C">Lightweight SIEM that parses Linux auth logs and stores failed logins in SQLite/SQL for continuous</text>
+  <text x="32" y="86" font-family="system-ui, -apple-system, sans-serif" font-size="15" fill="#BDB29C">monitoring and audit trails.</text>
+
+  <!-- Max 3 Small Tags -->
+  <g transform="translate(32, 110)">
+    <!-- Tag 1 -->
+    <rect x="0" y="0" width="120" height="24" rx="3" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+    <text x="60" y="16" font-family="ui-monospace, monospace" font-size="12" fill="#EFE8D8" text-anchor="middle">SIEM Pipeline</text>
+
+    <!-- Tag 2 -->
+    <rect x="130" y="0" width="126" height="24" rx="3" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+    <text x="193" y="16" font-family="ui-monospace, monospace" font-size="12" fill="#EFE8D8" text-anchor="middle">Bash &amp; SQLite</text>
+
+    <!-- Tag 3 -->
+    <rect x="266" y="0" width="114" height="24" rx="3" fill="#17130F" stroke="#C8A45A" stroke-width="0.9"/>
+    <text x="323" y="16" font-family="ui-monospace, monospace" font-size="12" font-weight="600" fill="#C8A45A" text-anchor="middle">Audit Trails</text>
+  </g>
+</svg>

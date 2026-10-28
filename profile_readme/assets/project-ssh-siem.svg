@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 138" width="830" height="138">
+  <rect x="0.5" y="0.5" width="829" height="137" rx="8" fill="#211B15" stroke="#3A3126" stroke-width="1"/>
+  <line x1="32" y1="1" x2="84" y2="1" stroke="#C8A45A" stroke-width="2"/>
+
+  <!-- File-style index: 02 /ssh-brute-force-pipeline -->
+  <text x="32" y="32" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="14" font-weight="700" fill="#8FBF9F">02 /<tspan font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" fill="#EFE8D8">ssh-brute-force-pipeline</tspan></text>
+  <text x="798" y="32" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="13" font-weight="500" fill="#BDB29C" text-anchor="end">view repository ↗</text>
+
+  <text x="32" y="60" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" fill="#BDB29C">Lightweight SIEM that parses Linux auth logs and stores failed logins in SQLite/SQL for continuous</text>
+  <text x="32" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="14.5" fill="#BDB29C">monitoring and audit trails.</text>
+
+  <g transform="translate(32, 102)">
+    <rect x="0" y="0" width="120" height="22" rx="3" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+    <text x="60" y="15" font-family="ui-monospace, monospace" font-size="11.5" fill="#EFE8D8" text-anchor="middle">SIEM Pipeline</text>
+
+    <rect x="130" y="0" width="126" height="22" rx="3" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+    <text x="193" y="15" font-family="ui-monospace, monospace" font-size="11.5" fill="#EFE8D8" text-anchor="middle">Bash &amp; SQLite</text>
+
+    <rect x="266" y="0" width="114" height="22" rx="3" fill="#17130F" stroke="#C8A45A" stroke-width="0.9"/>
+    <text x="323" y="15" font-family="ui-monospace, monospace" font-size="11.5" font-weight="600" fill="#C8A45A" text-anchor="middle">Audit Trails</text>
+  </g>
+</svg>

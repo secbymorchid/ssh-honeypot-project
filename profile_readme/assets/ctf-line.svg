@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 28" width="830" height="28">
+  <rect x="0.5" y="0.5" width="829" height="27" rx="5" fill="#17130F" stroke="#2B231A" stroke-width="1"/>
+  <text x="32" y="18" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="13" fill="#8C8273">Also: <tspan fill="#EFE8D8" font-family="Georgia, serif" font-weight="600">Red Phoenix CTF 2026 writeups</tspan> <tspan fill="#8FBF9F" font-family="system-ui, sans-serif" font-weight="600">↗</tspan></text>
+  <text x="798" y="18" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="12" fill="#8C8273" text-anchor="end">view writeups ↗</text>
+</svg>

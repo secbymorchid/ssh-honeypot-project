@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 190" width="830" height="190">
+  <!-- Panel Base: #17130F with Hairline Border #3A3126 -->
+  <rect x="0.5" y="0.5" width="829" height="189" rx="8" fill="#17130F" stroke="#3A3126" stroke-width="1"/>
+  <rect x="5.5" y="5.5" width="819" height="179" rx="5" fill="none" stroke="#251E17" stroke-width="0.8"/>
+
+  <!-- Section Label -->
+  <text x="32" y="34" font-family="ui-monospace, 'SF Mono', Consolas, Menlo, monospace" font-size="13" font-weight="600" fill="#C8A45A" letter-spacing="1.5px">// TECHNICAL &amp; GOVERNANCE TOOLKIT</text>
+  <line x1="32" y1="46" x2="798" y2="46" stroke="#3A3126" stroke-width="1"/>
+
+  <!-- Line 1: Governance & architecture -->
+  <g transform="translate(32, 80)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="14.2" font-weight="700" fill="#C8A45A">Governance &amp; architecture:</text>
+    <text x="194" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" fill="#EFE8D8">ISO 27001 · EBIOS RM · GDPR · Merise · UML · SAP PowerDesigner · Agile/Scrum · GanttProject</text>
+  </g>
+
+  <!-- Line 2: Security operations -->
+  <g transform="translate(32, 120)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="14.2" font-weight="700" fill="#C8A45A">Security operations:</text>
+    <text x="194" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" fill="#EFE8D8">MITRE ATT&amp;CK · SIEM · Linux hardening · iptables · Wireshark · Threat hunting</text>
+  </g>
+
+  <!-- Line 3: Scripting & systems -->
+  <g transform="translate(32, 160)">
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="14.2" font-weight="700" fill="#C8A45A">Scripting &amp; systems:</text>
+    <text x="194" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="13.8" fill="#EFE8D8">Python · Bash · SQL/SQLite · C · Docker · Git</text>
+  </g>
+</svg>
